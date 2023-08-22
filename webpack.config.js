@@ -2,31 +2,34 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js', // Путь к главному JavaScript файлу
+    entry: './src/index.js',
     output: {
-        filename: 'bundle.js', // Имя выходного файла
-        path: path.resolve(__dirname, 'dist'), // Путь для сохранения сборки
+        filename: 'bundle.js', 
+        path: path.resolve(__dirname, 'dist'), 
     },
     module: {
         rules: [
             {
-                test: /\.scss$/, // Расширение файлов для обработки SASS
+                test: /\.scss$/, 
                 use: [
-                    'style-loader', // Вставляет стили в DOM
-                    'css-loader', // Переводит CSS в CommonJS
-                    'sass-loader', // Компилирует SASS в CSS
+                    'style-loader', 
+                    'css-loader', 
+                    'sass-loader', 
                 ],
             },
+            {
+                test: /\.html$/i,
+                loader: 'html-loader',
+            }
         ],
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html', // Путь к вашему HTML-шаблону
-            filename: 'index.html', // Имя выходного HTML-файла
+            template: './src/index.html', 
+            filename: 'index.html',
         }),
-        // ... (другие плагины)
     ],
     devServer: {
-        static: './dist', // Путь к статическим файлам для dev-сервера
+        static: './dist',
     },
 };

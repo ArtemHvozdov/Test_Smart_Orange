@@ -20,6 +20,7 @@
     "homepage": "https://github.com/ArtDev-stack/Test_Smart_Orange#readme",
     "devDependencies": {
         "css-loader": "^6.8.1",
+        "html-loader": "^4.2.0",
         "html-webpack-plugin": "^5.5.3",
         "mini-css-extract-plugin": "^2.7.6",
         "sass": "^1.66.1",
